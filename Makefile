@@ -10,3 +10,6 @@ publish: # публикация
 
 lint: # запуск лиента eslint
 	npx eslint .
+
+brain-even: # быстрый запуск игры Четные числа
+	node bin/brain-even.js

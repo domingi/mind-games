@@ -5,7 +5,9 @@
   "description": "[![Actions Status](https://github.com/domingi/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/domingi/frontend-project-44/actions)",
   "main": "index.js",
   "bin": {
+    "brain-even": "bin/brain-even.js",
     "brain-games": "bin/brain-games.js"
+
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
