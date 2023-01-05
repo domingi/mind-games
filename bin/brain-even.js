@@ -21,7 +21,7 @@ const getRandom = () => {
         console.log(
           `'${answer}' is wrong answer ;(. Correct answer was 'yes'.`
         );
-        console.log(`Let's try again, ${playerName}!`);
+        break;
       }
     } else {
       // eslint-disable-next-line no-lonely-if
@@ -30,11 +30,13 @@ const getRandom = () => {
         console.log('Correct!');
       } else {
         console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.`);
-        console.log(`Let's try again, ${playerName}!`);
+        break;
       }
     }
   }
-  console.log(`Congratulations, ${playerName}!`);
+  countRightQuestions === 3
+    ? console.log(`Congratulations, ${playerName}!`)
+    : console.log(`Let's try again, ${playerName}!`);
 };
 
 getRandom();
