@@ -13,3 +13,7 @@
 ## Game GCD
 
 [![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/KRo1tTuPS05PtVFtThtDbDK4G)
+
+## Game Progression
+
+[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/mpJGIMOFqz4CSGpkiNgiUsXDa)
