@@ -1,4 +1,4 @@
-import { readlineSync, greeting, randomNum, randomSign, checkResult } from '../index.js';
+import { readlineSync, greeting, randomNum, randomSign, checkTheRightAnswer, checkResult } from '../index.js';
 
 const playerName = greeting();
 
@@ -10,7 +10,6 @@ const gameCalc = () => {
 
   while (countRightQuestions < 3) {
     const expression = [randomNum(), randomSign(), randomNum()];
-    // eslint-disable-next-line default-case
     switch (expression[1]) {
       case '+':
         rightAnswer = expression[0] + expression[2];
@@ -27,14 +26,11 @@ const gameCalc = () => {
     console.log(`Question: ${expression[0]} ${expression[1]} ${expression[2]} `);
     const answer = readlineSync.question('Your answer ');
 
-    if (answer === rightAnswer) {
+    if (checkTheRightAnswer(rightAnswer, answer)) {
       countRightQuestions += 1;
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      break;
-    }
+    } else break;
   }
+
   checkResult(countRightQuestions, playerName);
 };
 

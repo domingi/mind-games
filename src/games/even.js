@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import { readlineSync, greeting, randomNum, checkResult } from '../index.js';
+import { readlineSync, greeting, randomNum, checkTheRightAnswer, checkResult } from '../index.js';
 
 const playerName = greeting();
 
@@ -18,13 +18,9 @@ const getRandom = () => {
     console.log(`Question: ${num}`);
     const answer = readlineSync.question('Your answer ');
 
-    if (answer === rightAnswer) {
+    if (checkTheRightAnswer(rightAnswer, answer)) {
       countRightQuestions += 1;
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      break;
-    }
+    } else break;
   }
 
   checkResult(countRightQuestions, playerName);

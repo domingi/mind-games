@@ -1,4 +1,4 @@
-import { readlineSync, greeting, randomNum, checkResult } from '../index.js';
+import { readlineSync, greeting, randomNum, checkTheRightAnswer, checkResult } from '../index.js';
 
 const getGreatestDivisor = (a, b) => {
   let remainder = a % b;
@@ -27,14 +27,11 @@ const gameGCD = () => {
     console.log(`Question: ${expression[0]} ${expression[1]}`);
     const answer = readlineSync.question('Your answer ');
 
-    if (answer === rightAnswer) {
+    if (checkTheRightAnswer(rightAnswer, answer)) {
       countRightQuestions += 1;
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      break;
-    }
+    } else break;
   }
+
   checkResult(countRightQuestions, playerName);
 };
 
