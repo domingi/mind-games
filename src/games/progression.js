@@ -21,7 +21,7 @@ const gameProgression = () => {
       i += step;
     }
 
-    const hiddenPosition = Math.floor(Math.random() * 9 + 2);
+    const hiddenPosition = Math.floor(Math.random() * 9);
     const rightAnswer = progression[hiddenPosition].toString();
 
     progression[hiddenPosition] = '..';
