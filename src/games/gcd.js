@@ -1,4 +1,10 @@
-import { readlineSync, greeting, randomNum, checkTheRightAnswer, checkResult } from '../index.js';
+import {
+  readlineSync,
+  greeting,
+  randomNum,
+  checkTheRightAnswer,
+  checkResult,
+} from '../index.js';
 
 const getGreatestDivisor = (a, b) => {
   let remainder = a % b;

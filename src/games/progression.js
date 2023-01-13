@@ -1,4 +1,9 @@
-import { readlineSync, greeting, randomNum, checkResult } from '../index.js';
+import {
+  readlineSync,
+  greeting,
+  randomNum,
+  checkResult,
+} from '../index.js';
 
 const playerName = greeting();
 

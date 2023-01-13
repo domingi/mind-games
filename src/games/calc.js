@@ -1,4 +1,11 @@
-import { readlineSync, greeting, randomNum, randomSign, checkTheRightAnswer, checkResult } from '../index.js';
+import {
+  readlineSync,
+  greeting,
+  randomNum,
+  randomSign,
+  checkTheRightAnswer,
+  checkResult,
+} from '../index.js';
 
 const playerName = greeting();
 
@@ -20,6 +27,8 @@ const gameCalc = () => {
       case '*':
         rightAnswer = expression[0] * expression[2];
         break;
+      default:
+        rightAnswer = 0;
     }
     rightAnswer = rightAnswer.toString();
 

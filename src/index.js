@@ -16,7 +16,7 @@ const randomSign = () => {
   const sign = Math.floor(Math.random() * 3);
   if (sign === 0) return '+';
   if (sign === 1) return '-';
-  if (sign === 2) return '*';
+  return '*';
 };
 
 // Проверка правильного ответа в игре
@@ -31,7 +31,15 @@ const checkTheRightAnswer = (rightAnswer, answer) => {
 
 // Проверка результата игры
 const checkResult = (count, name) => {
+  // eslint-disable-next-line no-unused-expressions
   count === 3 ? console.log(`Congratulations, ${name}!`) : console.log(`Let's try again, ${name}!`);
 };
 
-export { readlineSync, greeting, randomNum, randomSign, checkTheRightAnswer, checkResult };
+export {
+  readlineSync,
+  greeting,
+  randomNum,
+  randomSign,
+  checkTheRightAnswer,
+  checkResult,
+};
