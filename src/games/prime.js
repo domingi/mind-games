@@ -1,41 +1,19 @@
-import {
-  readlineSync,
-  greeting,
-  randomNum,
-  checkTheRightAnswer,
-  checkResult,
-} from '../index.js';
+import gameCore from '../index.js';
+import randomNum from '../tools.js';
 
-const isNumPrime = (number) => {
-  if (number < 2) return false;
-  if (number === 2) return true;
+const getPrimeOrNotPrimeNum = () => {
+  const number = randomNum();
+  if (number < 2) return [number, 'no'];
+  if (number === 2) return [number, 'yes'];
   for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) return false;
+    if (number % i === 0) return [number, 'no'];
   }
-  return true;
+  return [number, 'yes'];
 };
 
-const playerName = greeting();
+const rightAnswer = [getPrimeOrNotPrimeNum(), getPrimeOrNotPrimeNum(), getPrimeOrNotPrimeNum()];
+const greeting = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-const playGamePrime = () => {
-  let countRightQuestions = 0;
-  let rightAnswer;
-
-  while (countRightQuestions < 3) {
-    const questionNum = randomNum();
-    rightAnswer = isNumPrime(questionNum) ? 'yes' : 'no';
-
-    console.log(`Question: ${questionNum} `);
-    const answer = readlineSync.question('Your answer ');
-
-    if (checkTheRightAnswer(rightAnswer, answer)) {
-      countRightQuestions += 1;
-    } else break;
-  }
-
-  checkResult(countRightQuestions, playerName);
-};
+const playGamePrime = () => gameCore(greeting, rightAnswer);
 
 export default playGamePrime;

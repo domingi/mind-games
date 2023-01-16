@@ -1,10 +1,5 @@
-import {
-  readlineSync,
-  greeting,
-  randomNum,
-  checkTheRightAnswer,
-  checkResult,
-} from '../index.js';
+import gameCore from '../index.js';
+import randomNum from '../tools.js';
 
 const getGreatestDivisor = (a, b) => {
   let remainder = a % b;
@@ -18,27 +13,15 @@ const getGreatestDivisor = (a, b) => {
   return divisor;
 };
 
-const playerName = greeting();
-console.log('Find the greatest common divisor of given numbers.');
-
-const playGameGCD = () => {
-  let countRightQuestions = 0;
-  let rightAnswer;
-
-  while (countRightQuestions < 3) {
-    const expression = [randomNum(), randomNum()];
-    rightAnswer = getGreatestDivisor(expression[0], expression[1]);
-    rightAnswer = rightAnswer.toString();
-
-    console.log(`Question: ${expression[0]} ${expression[1]}`);
-    const answer = readlineSync.question('Your answer ');
-
-    if (checkTheRightAnswer(rightAnswer, answer)) {
-      countRightQuestions += 1;
-    } else break;
-  }
-
-  checkResult(countRightQuestions, playerName);
+const getGCD = () => {
+  const expression = [randomNum(), randomNum()];
+  const rightAnswer = getGreatestDivisor(expression[0], expression[1]);
+  return [expression.join(' '), rightAnswer.toString()];
 };
+
+const rightAnswer = [getGCD(), getGCD(), getGCD()];
+const greeting = 'Find the greatest common divisor of given numbers.';
+
+const playGameGCD = () => gameCore(greeting, rightAnswer);
 
 export default playGameGCD;

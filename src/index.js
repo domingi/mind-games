@@ -1,40 +1,25 @@
 import readlineSync from 'readline-sync';
 
-const greeting = () => {
+const gameCore = (text, arr) => {
   console.log('Welcome to the Brain Games!');
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}`);
-  return playerName;
-};
+  console.log(text);
 
-const randomNum = () => Math.round(Math.random() * 100 + 1);
+  let i = 0;
+  while (i < 3) {
+    console.log(`Question: ${arr[i][0]}`);
+    const answer = readlineSync.question('Your answer ');
 
-const randomSign = () => {
-  const sign = Math.floor(Math.random() * 3);
-  if (sign === 0) return '+';
-  if (sign === 1) return '-';
-  return '*';
-};
-
-const checkTheRightAnswer = (rightAnswer, answer) => {
-  if (answer === rightAnswer) {
-    console.log('Correct!');
-    return true;
+    if (answer === arr[i][1]) {
+      console.log('Correct!');
+      i += 1;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${arr[i][1]}'.`);
+      return console.log(`Let's try again, ${playerName}!`);
+    }
   }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-  return false;
+  return console.log(`Congratulations, ${playerName}!`);
 };
 
-const checkResult = (count, name) => {
-  // eslint-disable-next-line no-unused-expressions
-  count === 3 ? console.log(`Congratulations, ${name}!`) : console.log(`Let's try again, ${name}!`);
-};
-
-export {
-  readlineSync,
-  greeting,
-  randomNum,
-  randomSign,
-  checkTheRightAnswer,
-  checkResult,
-};
+export default gameCore;
