@@ -19,7 +19,7 @@ const playerName = greeting();
 
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-const gamePrime = () => {
+const playGamePrime = () => {
   let countRightQuestions = 0;
   let rightAnswer;
 
@@ -38,4 +38,4 @@ const gamePrime = () => {
   checkResult(countRightQuestions, playerName);
 };
 
-export default gamePrime;
+export default playGamePrime;

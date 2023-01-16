@@ -11,7 +11,7 @@ const playerName = greeting();
 
 console.log('What is the result of the expression?');
 
-const gameCalc = () => {
+const playGameCalc = () => {
   let countRightQuestions = 0;
   let rightAnswer;
 
@@ -43,4 +43,4 @@ const gameCalc = () => {
   checkResult(countRightQuestions, playerName);
 };
 
-export default gameCalc;
+export default playGameCalc;

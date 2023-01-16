@@ -9,7 +9,7 @@ const playerName = greeting();
 
 console.log('What number is missing in the progression?');
 
-const gameProgression = () => {
+const playGameProgression = () => {
   let countRightQuestions = 0;
 
   while (countRightQuestions < 3) {
@@ -41,4 +41,4 @@ const gameProgression = () => {
   checkResult(countRightQuestions, playerName);
 };
 
-export default gameProgression;
+export default playGameProgression;

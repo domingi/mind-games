@@ -5,7 +5,7 @@ const playerName = greeting();
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-const getRandom = () => {
+const playGameEven = () => {
   let countRightQuestions = 0;
   let rightAnswer;
 
@@ -25,4 +25,4 @@ const getRandom = () => {
 
   checkResult(countRightQuestions, playerName);
 };
-export default getRandom;
+export default playGameEven;

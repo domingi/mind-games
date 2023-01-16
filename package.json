@@ -1,8 +1,8 @@
 {
-  "name": "@hexlet/code",
+  "name": "Brain games",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/domingi/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/domingi/frontend-project-44/actions)",
+  "description": "A set of game to train your brain",
   "main": "index.js",
   "bin": {
     "brain-even": "bin/brain-even.js",

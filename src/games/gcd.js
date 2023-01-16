@@ -21,7 +21,7 @@ const getGreatestDivisor = (a, b) => {
 const playerName = greeting();
 console.log('Find the greatest common divisor of given numbers.');
 
-const gameGCD = () => {
+const playGameGCD = () => {
   let countRightQuestions = 0;
   let rightAnswer;
 
@@ -41,4 +41,4 @@ const gameGCD = () => {
   checkResult(countRightQuestions, playerName);
 };
 
-export default gameGCD;
+export default playGameGCD;
