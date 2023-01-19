@@ -1,19 +1,29 @@
-import gameCore from '../index.js';
-import randomNum from '../tools.js';
+import runGame from '../index.js';
+import getRandomNum from '../utils.js';
 
-const getPrimeOrNotPrimeNum = () => {
-  const number = randomNum();
-  if (number < 2) return [number, 'no'];
-  if (number === 2) return [number, 'yes'];
-  for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) return [number, 'no'];
+const checkPrime = (num) => {
+  if (num < 2) return false;
+  if (num === 2) return true;
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) return false;
   }
-  return [number, 'yes'];
+  return true;
 };
 
-const rightAnswer = [getPrimeOrNotPrimeNum(), getPrimeOrNotPrimeNum(), getPrimeOrNotPrimeNum()];
+const getNumAndCheckPrime = () => {
+  const num = getRandomNum();
+  if (checkPrime(num)) return [num, 'yes'];
+  return [num, 'no'];
+};
+
 const greeting = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const playGamePrime = () => gameCore(greeting, rightAnswer);
+const playGamePrime = (rounds = 3) => {
+  const answerRight = [];
+  for (let i = 0; i < rounds; i += 1) {
+    answerRight.push(getNumAndCheckPrime());
+  }
+  runGame(greeting, answerRight, rounds);
+};
 
 export default playGamePrime;

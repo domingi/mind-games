@@ -1,17 +1,25 @@
-import gameCore from '../index.js';
-import randomNum from '../tools.js';
+import runGame from '../index.js';
+import getRandomNum from '../utils.js';
 
-const getEvenOrOddNum = () => {
-  const number = randomNum();
-  if (number % 2 === 0) {
-    return [number, 'yes'];
-  }
+const checkEven = (number) => {
+  if (number % 2 === 0) return true;
+  return false;
+};
+
+const getNumAndCheckEven = () => {
+  const number = getRandomNum();
+  if (checkEven(number)) return [number, 'yes'];
   return [number, 'no'];
 };
 
-const rightAnswer = [getEvenOrOddNum(), getEvenOrOddNum(), getEvenOrOddNum()];
 const greeting = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const playGameEven = () => gameCore(greeting, rightAnswer);
+const playGameEven = (rounds = 3) => {
+  const answerRight = [];
+  for (let i = 0; i < rounds; i += 1) {
+    answerRight.push(getNumAndCheckEven());
+  }
+  runGame(greeting, answerRight, rounds);
+};
 
 export default playGameEven;
