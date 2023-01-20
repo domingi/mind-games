@@ -1,31 +1,33 @@
-import runGame from '../index.js';
+import { runGame, rounds } from '../index.js';
 import getRandomNum from '../utils.js';
 
 const getProgression = () => {
   const step = Math.floor(Math.random() * 10 + 1);
-  let progression = [];
-  let i = getRandomNum();
-  while (progression.length < 10) {
-    progression.push(i);
-    i += step;
+  const progression = [];
+  let progressionUnit = getRandomNum();
+  for (let i = 0; i < 10; i += 1) {
+    progression.push(progressionUnit);
+    progressionUnit += step;
   }
-
-  const hiddenPosition = Math.floor(Math.random() * 9);
-  const rightAnswer = progression[hiddenPosition].toString();
-
-  progression[hiddenPosition] = '..';
-  progression = [progression.join(' '), rightAnswer];
   return progression;
+};
+
+const getTerm = () => {
+  const question = getProgression();
+  const hiddenPosition = Math.floor(Math.random() * 9);
+  const answer = question[hiddenPosition].toString();
+  question[hiddenPosition] = '..';
+  return [question.join(' '), answer];
 };
 
 const greeting = 'What number is missing in the progression?';
 
-const playGameProgression = (rounds = 3) => {
-  const answerRight = [];
+const playGameProgression = () => {
+  const roundTerms = [];
   for (let i = 0; i < rounds; i += 1) {
-    answerRight.push(getProgression());
+    roundTerms.push(getTerm());
   }
-  runGame(greeting, answerRight, rounds);
+  runGame(greeting, roundTerms);
 };
 
 export default playGameProgression;

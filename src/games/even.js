@@ -1,25 +1,24 @@
-import runGame from '../index.js';
+import { runGame, rounds } from '../index.js';
 import getRandomNum from '../utils.js';
 
-const checkEven = (number) => {
-  if (number % 2 === 0) return true;
-  return false;
-};
+const isEven = (number) => number % 2 === 0;
 
-const getNumAndCheckEven = () => {
-  const number = getRandomNum();
-  if (checkEven(number)) return [number, 'yes'];
-  return [number, 'no'];
+const getTerm = () => {
+  const question = getRandomNum();
+  let answer = 'no';
+  if (isEven(question)) answer = 'yes';
+
+  return [question, answer];
 };
 
 const greeting = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const playGameEven = (rounds = 3) => {
-  const answerRight = [];
+const playGameEven = () => {
+  const roundTerms = [];
   for (let i = 0; i < rounds; i += 1) {
-    answerRight.push(getNumAndCheckEven());
+    roundTerms.push(getTerm());
   }
-  runGame(greeting, answerRight, rounds);
+  runGame(greeting, roundTerms);
 };
 
 export default playGameEven;

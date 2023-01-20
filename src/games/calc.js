@@ -1,4 +1,4 @@
-import runGame from '../index.js';
+import { runGame, rounds } from '../index.js';
 import getRandomNum from '../utils.js';
 
 const getRandomSign = () => {
@@ -17,28 +17,29 @@ const calculate = (num1, num2, sign) => {
     case '*':
       return num1 * num2;
     default:
-      return 0;
+      return console.log('Error. Wrong result in function \'calculate\'');
   }
 };
 
-const getExpressionAndResult = () => {
+const getTerm = () => {
   const num1 = getRandomNum();
   const num2 = getRandomNum();
   const sign = getRandomSign();
 
-  const result = calculate(num1, num2, sign);
-  const expression = [num1, sign, num2];
+  const answer = calculate(num1, num2, sign);
+  const question = `${num1} ${sign} ${num2}`;
 
-  return [expression.join(' '), result.toString()];
+  return [question, answer.toString()];
 };
 
 const greeting = 'What is the result of the expression?';
 
-const playGameCalc = (rounds = 3) => {
-  const answerRight = [];
+const playGameCalc = () => {
+  const roundTerms = [];
   for (let i = 0; i < rounds; i += 1) {
-    answerRight.push(getExpressionAndResult());
+    roundTerms.push(getTerm());
   }
-  runGame(greeting, answerRight, rounds);
+  runGame(greeting, roundTerms);
 };
+
 export default playGameCalc;
