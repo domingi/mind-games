@@ -13,14 +13,14 @@ const getGCD = (a, b) => {
   return divisor;
 };
 
-const getTerm = () => {
+const getRound = () => {
   const num1 = getRandomNum();
   const num2 = getRandomNum();
 
-  const answer = getGCD(num1, num2);
+  const answer = getGCD(num1, num2).toString();
   const question = `${num1} ${num2}`;
 
-  return [question, answer.toString()];
+  return [question, answer];
 };
 
 const greeting = 'Find the greatest common divisor of given numbers.';
@@ -28,7 +28,7 @@ const greeting = 'Find the greatest common divisor of given numbers.';
 const playGameGCD = () => {
   const roundTerms = [];
   for (let i = 0; i < rounds; i += 1) {
-    roundTerms.push(getTerm());
+    roundTerms.push(getRound());
   }
   runGame(greeting, roundTerms);
 };

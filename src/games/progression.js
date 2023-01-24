@@ -12,12 +12,13 @@ const getProgression = () => {
   return progression;
 };
 
-const getTerm = () => {
-  const question = getProgression();
+const getRound = () => {
+  const progression = getProgression();
   const hiddenPosition = Math.floor(Math.random() * 9);
-  const answer = question[hiddenPosition].toString();
-  question[hiddenPosition] = '..';
-  return [question.join(' '), answer];
+  const answer = progression[hiddenPosition].toString();
+  progression[hiddenPosition] = '..';
+  const question = progression.join(' ');
+  return [question, answer];
 };
 
 const greeting = 'What number is missing in the progression?';
@@ -25,7 +26,7 @@ const greeting = 'What number is missing in the progression?';
 const playGameProgression = () => {
   const roundTerms = [];
   for (let i = 0; i < rounds; i += 1) {
-    roundTerms.push(getTerm());
+    roundTerms.push(getRound());
   }
   runGame(greeting, roundTerms);
 };

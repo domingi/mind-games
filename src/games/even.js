@@ -3,10 +3,9 @@ import getRandomNum from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
 
-const getTerm = () => {
+const getRound = () => {
   const question = getRandomNum();
-  let answer = 'no';
-  if (isEven(question)) answer = 'yes';
+  const answer = isEven(question) ? 'yes' : 'no';
 
   return [question, answer];
 };
@@ -16,7 +15,7 @@ const greeting = 'Answer "yes" if the number is even, otherwise answer "no".';
 const playGameEven = () => {
   const roundTerms = [];
   for (let i = 0; i < rounds; i += 1) {
-    roundTerms.push(getTerm());
+    roundTerms.push(getRound());
   }
   runGame(greeting, roundTerms);
 };
