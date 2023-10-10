@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/domingi/mind-games/workflows/hexlet-check/badge.svg)](https://github.com/domingi/mind-games/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/2e98b2c5bf54683eb3ae/maintainability)](https://codeclimate.com/github/domingi/frontend-project-44/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2e98b2c5bf54683eb3ae/maintainability)](https://codeclimate.com/github/domingi/frontend-project-44/maintainability)
 
 This is my first educational project from Hexlet. Here I got acquainted with JavaScript, npm, GitHub and linter.
 
