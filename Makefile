@@ -1,15 +1,20 @@
-#Makefile
-install: # установка
+install:
 	npm ci
 
-brain-games: # быстрый запуск игры
-	node bin/brain-games.js
-
-publish: # публикация
-	npm publish --dry-run
-
-lint: # запуск лиента eslint
+lint:
 	npx eslint .
 
-brain-even: # быстрый запуск игры Четные числа
+even:
 	node bin/brain-even.js
+
+calc:
+	node bin/brain-calc.js
+
+gcd:
+	node bin/brain-gcd.js
+
+progression:
+	node bin/brain-progression.js
+
+prime:
+	node bin/brain-prime.js

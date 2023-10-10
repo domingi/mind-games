@@ -1,6 +1,6 @@
-### Hexlet tests and linter status:
-
 [![Actions Status](https://github.com/domingi/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/domingi/frontend-project-44/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/2e98b2c5bf54683eb3ae/maintainability)](https://codeclimate.com/github/domingi/frontend-project-44/maintainability)
+
+This is my first educational project from Hexlet. Here I got acquainted with Javascript, npm, GitHub and linter.
 
 # Brain games
 
@@ -20,60 +20,13 @@ Each game includes three question. If you fault - start again!
 ```shell
 make install
 # now you can start any of the games
-brain-even # start game "Is number is even or not?"
-brain-calc # start game "Calculate this!"
-brain-gcd # start game "Find the greatest common divisor"
-brain-progression # start game "Find the missing number in progression"
-brain-prime # start game "Find the missing number in progression"
+make even # start game "Is number is even or not?"
+make calc # start game "Calculate this!"
+make gcd # start game "Find the greatest common divisor"
+make progression # start game "Find the missing number in progression"
+make prime # start game "Find the missing number in progression"
 ```
 
-## List of games
+## Demonstration
 
-### 1. Is number is even or not?
-
-```shell
-brain-even
-```
-
-Answer "yes" if the number is even, otherwise answer "no".
-
-[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz)
-
-### 2. Calculate this!
-
-```shell
-brain-calc
-```
-
-Find the result of the expression.
-
-[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/9lASzHt2rxtRZU9VvbePYdmI1)
-
-### 3. Find the greatest common divisor
-
-```shell
-brain-gcd
-```
-
-Find the greatest common divisor of given numbers.
-
-[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/KRo1tTuPS05PtVFtThtDbDK4G)
-
-### 4. Find the missing number in progression
-
-```shell
-brain-progression
-```
-Find the number is missing in the progression.
-
-[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/mpJGIMOFqz4CSGpkiNgiUsXDa)
-
-## 5. Game Prime
-
-```shell
-brain-prime
-```
-
-Answer "yes" if given number is prime. Otherwise answer "no".
-
-[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/H0rPuUpvoLdACwfPCCr7EFwPn)
+[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/yuazgn2Tb30jDAU24B9VDRM4N)
