@@ -1,6 +1,6 @@
-[![Actions Status](https://github.com/domingi/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/domingi/frontend-project-44/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/2e98b2c5bf54683eb3ae/maintainability)](https://codeclimate.com/github/domingi/frontend-project-44/maintainability)
+[![Actions Status](https://github.com/domingi/mind-games/workflows/hexlet-check/badge.svg)](https://github.com/domingi/mind-games/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/2e98b2c5bf54683eb3ae/maintainability)](https://codeclimate.com/github/domingi/frontend-project-44/maintainability)
 
-This is my first educational project from Hexlet. Here I got acquainted with Javascript, npm, GitHub and linter.
+This is my first educational project from Hexlet. Here I got acquainted with JavaScript, npm, GitHub and linter.
 
 # Brain games
 
@@ -29,4 +29,4 @@ make prime # start game "Find the missing number in progression"
 
 ## Demonstration
 
-[![asciicast](https://asciinema.org/a/uarq1kBzjZD8bEDiJfSoVZcrz.svg)](https://asciinema.org/a/yuazgn2Tb30jDAU24B9VDRM4N)
+[![asciicast](https://asciinema.org/a/yuazgn2Tb30jDAU24B9VDRM4N.svg)](https://asciinema.org/a/yuazgn2Tb30jDAU24B9VDRM4N)
